@@ -1,0 +1,84 @@
+{
+  "pokemon1" : {
+    "nombre" : "suicune",
+    "imagen" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/245.gif",
+    "movimientos" : [ {
+      "nombre" : "hyper-beam",
+      "accuracy" : 90,
+      "power" : 150,
+      "pp" : 5,
+      "priority" : 0,
+      "tipo" : "normal"
+    }, {
+      "nombre" : "iron-tail",
+      "accuracy" : 75,
+      "power" : 100,
+      "pp" : 15,
+      "priority" : 0,
+      "tipo" : "steel"
+    }, {
+      "nombre" : "swagger",
+      "accuracy" : 85,
+      "power" : -2,
+      "pp" : 15,
+      "priority" : 0,
+      "tipo" : "normal"
+    }, {
+      "nombre" : "tera-blast",
+      "accuracy" : 100,
+      "power" : 80,
+      "pp" : 10,
+      "priority" : 0,
+      "tipo" : "normal"
+    } ],
+    "estadisticas" : {
+      "hp" : 100,
+      "attack" : 75,
+      "defense" : 115,
+      "specialAttack" : 90,
+      "specialDefense" : 115,
+      "speed" : 85
+    }
+  },
+  "pokemon2" : {
+    "nombre" : "hatterene",
+    "imagen" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/858.gif",
+    "movimientos" : [ {
+      "nombre" : "wonder-room",
+      "accuracy" : -2,
+      "power" : -2,
+      "pp" : 10,
+      "priority" : 0,
+      "tipo" : "psychic"
+    }, {
+      "nombre" : "facade",
+      "accuracy" : 100,
+      "power" : 70,
+      "pp" : 20,
+      "priority" : 0,
+      "tipo" : "normal"
+    }, {
+      "nombre" : "life-dew",
+      "accuracy" : -2,
+      "power" : -2,
+      "pp" : 10,
+      "priority" : 0,
+      "tipo" : "water"
+    }, {
+      "nombre" : "psychic-terrain",
+      "accuracy" : -2,
+      "power" : -2,
+      "pp" : 10,
+      "priority" : 0,
+      "tipo" : "psychic"
+    } ],
+    "estadisticas" : {
+      "hp" : 100,
+      "attack" : 75,
+      "defense" : 115,
+      "specialAttack" : 90,
+      "specialDefense" : 115,
+      "speed" : 85
+    }
+  }
+}

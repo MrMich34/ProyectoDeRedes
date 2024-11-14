@@ -40,7 +40,6 @@ public class ClientePokeAPI {
             while ((output = br.readLine()) != null) {
                 sb.append(output);
             }
-            //System.out.println("Contenido del JSON en String: " + sb.toString());
             json = new JSONObject(sb.toString());
             conn.disconnect();
 

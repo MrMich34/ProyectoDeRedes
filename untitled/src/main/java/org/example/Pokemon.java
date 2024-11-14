@@ -12,15 +12,27 @@ import org.json.JSONObject;
 
 public class Pokemon {
     String nombre;
+    String imagen;
     List<Movimiento> movimientos;
     Estadisticas estadisticas;
 
     public Pokemon() {
 
         nombre = null;
+        imagen = null;
         movimientos = new ArrayList<>();
         estadisticas = new Estadisticas();
 
+    }
+
+    public void anadirEstadisticas(int hp, int attack, int defense, int specialAttack, int specialDefense, int speed){
+        Estadisticas e = new Estadisticas(hp,attack,defense,specialAttack,specialDefense,speed);
+        setEstadisticas(e);
+    }
+
+    public void anadirMovimiento(List<String> lm){
+        Movimiento m = new Movimiento(lm.get(0),lm.get(1),lm.get(2),lm.get(3),lm.get(4), lm.get(5));
+        movimientos.add(m);
     }
 
     public String getNombre() {
@@ -47,9 +59,20 @@ public class Pokemon {
         this.estadisticas = estadisticas;
     }
 
-    @Override
-    public String toString() {
-        return "La cadena con datos es "+ nombre+ " Y los movimientos son: " +movimientos;
+    public String getImagen() {
+        return imagen;
+    }
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "nombre='" + nombre + '\'' +
+                ", imagen='" + imagen + '\'' +
+                ", movimientos=" + movimientos +
+                ", estadisticas=" + estadisticas +
+                '}';
+    }
 }
