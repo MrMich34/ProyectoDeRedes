@@ -11,14 +11,27 @@ public class Pelea {
 
     }
 
-    public void getPokemon1(int pokedexNumber){
-        pokemon1.getPokemon(pokedexNumber);
+    public void anadirNombre1(String nombrePokemon){
+
+        pokemon1.setNombre(nombrePokemon);
 
     }
 
-    public void getPokemon2(int pokedexNumber){
-        pokemon2.getPokemon(pokedexNumber);
+    public void anadirNombre2(String nombrePokemon){
+
+        pokemon2.setNombre(nombrePokemon);
     }
+
+
+    public Pokemon getPokemon1(){
+        System.out.println(pokemon1);
+        return pokemon1;
+    }
+    public Pokemon getPokemon2(){
+        System.out.println(pokemon2);
+        return pokemon2;
+    }
+
 
 
 }
