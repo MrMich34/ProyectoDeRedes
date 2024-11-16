@@ -129,7 +129,7 @@ public class Main {
 
 
         };
-        executorService.scheduleAtFixedRate(generarAleatorio, 0, 5, TimeUnit.MINUTES);
+        executorService.scheduleAtFixedRate(generarAleatorio, 0, 10, TimeUnit.MINUTES);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Deteniendo el servicio de ejecuciones programadas.");

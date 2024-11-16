@@ -8,14 +8,16 @@ public class Movimiento {
     int pp;
     int priority;
     String tipo;
+    String estado;
 
-    public Movimiento(String nombre, String accuracy, String power, String pp, String priority, String tipo) {
+    public Movimiento(String nombre, String accuracy, String power, String pp, String priority, String tipo, String estado) {
         this.nombre = nombre;
         this.accuracy = Integer.parseInt(accuracy);
         this.power = Integer.parseInt(power);
         this.pp = Integer.parseInt(pp);
         this.priority = Integer.parseInt(priority);
         this.tipo = tipo;
+        this.estado = estado;
     }
 
     public String getNombre() {
@@ -66,6 +68,14 @@ public class Movimiento {
         this.tipo = tipo;
     }
 
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
         return "Movimiento{" +
@@ -75,6 +85,7 @@ public class Movimiento {
                 ", pp=" + pp +
                 ", priority=" + priority +
                 ", tipo='" + tipo + '\'' +
+                ", estado='" + estado + '\'' +
                 '}';
     }
 }

@@ -90,6 +90,8 @@ public class ManejadorArchivos {
         }
         JSONObject js = objetoJSON.getJSONObject("type");
         movimiento.add(js.getString("name"));
+        js = objetoJSON.getJSONObject("damage_class");
+        movimiento.add(js.getString("name"));
         return movimiento;
 
     }
