@@ -1,84 +1,92 @@
 {
   "pokemon1" : {
-    "nombre" : "suicune",
-    "imagen" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/245.gif",
+    "nombre" : "rockruff",
+    "imagen" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/back/744.gif",
     "movimientos" : [ {
-      "nombre" : "hyper-beam",
-      "accuracy" : 90,
-      "power" : 150,
-      "pp" : 5,
+      "nombre" : "thunder-fang",
+      "accuracy" : 95,
+      "power" : 65,
+      "pp" : 15,
       "priority" : 0,
-      "tipo" : "normal"
+      "tipo" : "electric",
+      "estado" : "physical"
+    }, {
+      "nombre" : "sleep-talk",
+      "accuracy" : -2,
+      "power" : -2,
+      "pp" : 10,
+      "priority" : 0,
+      "tipo" : "normal",
+      "estado" : "status"
+    }, {
+      "nombre" : "body-slam",
+      "accuracy" : 100,
+      "power" : 85,
+      "pp" : 15,
+      "priority" : 0,
+      "tipo" : "normal",
+      "estado" : "physical"
     }, {
       "nombre" : "iron-tail",
       "accuracy" : 75,
       "power" : 100,
       "pp" : 15,
       "priority" : 0,
-      "tipo" : "steel"
-    }, {
-      "nombre" : "swagger",
-      "accuracy" : 85,
-      "power" : -2,
-      "pp" : 15,
-      "priority" : 0,
-      "tipo" : "normal"
-    }, {
-      "nombre" : "tera-blast",
-      "accuracy" : 100,
-      "power" : 80,
-      "pp" : 10,
-      "priority" : 0,
-      "tipo" : "normal"
+      "tipo" : "steel",
+      "estado" : "physical"
     } ],
     "estadisticas" : {
-      "hp" : 100,
-      "attack" : 75,
-      "defense" : 115,
-      "specialAttack" : 90,
-      "specialDefense" : 115,
-      "speed" : 85
+      "hp" : 45,
+      "attack" : 65,
+      "defense" : 40,
+      "specialAttack" : 30,
+      "specialDefense" : 40,
+      "speed" : 60
     }
   },
   "pokemon2" : {
-    "nombre" : "hatterene",
-    "imagen" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/858.gif",
+    "nombre" : "landorus-incarnate",
+    "imagen" : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/645.gif",
     "movimientos" : [ {
-      "nombre" : "wonder-room",
+      "nombre" : "sand-tomb",
+      "accuracy" : 85,
+      "power" : 35,
+      "pp" : 15,
+      "priority" : 0,
+      "tipo" : "ground",
+      "estado" : "physical"
+    }, {
+      "nombre" : "sunny-day",
+      "accuracy" : -2,
+      "power" : -2,
+      "pp" : 5,
+      "priority" : 0,
+      "tipo" : "fire",
+      "estado" : "status"
+    }, {
+      "nombre" : "substitute",
       "accuracy" : -2,
       "power" : -2,
       "pp" : 10,
       "priority" : 0,
-      "tipo" : "psychic"
+      "tipo" : "normal",
+      "estado" : "status"
     }, {
-      "nombre" : "facade",
+      "nombre" : "psychic",
       "accuracy" : 100,
-      "power" : 70,
-      "pp" : 20,
-      "priority" : 0,
-      "tipo" : "normal"
-    }, {
-      "nombre" : "life-dew",
-      "accuracy" : -2,
-      "power" : -2,
+      "power" : 90,
       "pp" : 10,
       "priority" : 0,
-      "tipo" : "water"
-    }, {
-      "nombre" : "psychic-terrain",
-      "accuracy" : -2,
-      "power" : -2,
-      "pp" : 10,
-      "priority" : 0,
-      "tipo" : "psychic"
+      "tipo" : "psychic",
+      "estado" : "special"
     } ],
     "estadisticas" : {
-      "hp" : 100,
-      "attack" : 75,
-      "defense" : 115,
-      "specialAttack" : 90,
-      "specialDefense" : 115,
-      "speed" : 85
+      "hp" : 45,
+      "attack" : 65,
+      "defense" : 40,
+      "specialAttack" : 30,
+      "specialDefense" : 40,
+      "speed" : 60
     }
   }
 }

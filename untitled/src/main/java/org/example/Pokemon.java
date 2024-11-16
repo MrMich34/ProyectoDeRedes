@@ -31,7 +31,7 @@ public class Pokemon {
     }
 
     public void anadirMovimiento(List<String> lm){
-        Movimiento m = new Movimiento(lm.get(0),lm.get(1),lm.get(2),lm.get(3),lm.get(4), lm.get(5));
+        Movimiento m = new Movimiento(lm.get(0),lm.get(1),lm.get(2),lm.get(3),lm.get(4), lm.get(5), lm.get(6));
         movimientos.add(m);
     }
 
