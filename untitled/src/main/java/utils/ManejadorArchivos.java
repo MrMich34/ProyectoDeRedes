@@ -2,6 +2,9 @@ package utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.example.Pelea;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -119,11 +122,37 @@ public class ManejadorArchivos {
         }
     }
 
-    public static void jsonEscribirTodo(Pelea p) throws IOException {
+    public static String obtenerTipo1(JSONObject objetoJSON){
+        JSONArray typesArray = objetoJSON.getJSONArray("types");
+        System.out.println(typesArray);
+        JSONObject typeObject = typesArray.getJSONObject(0).getJSONObject("type");
+        System.out.println(typeObject);
+        return typeObject.getString("name");
+
+    }
+
+    public static String obtenerTipo2(JSONObject objetoJSON){
+        JSONArray typesArray = objetoJSON.getJSONArray("types");
+        System.out.println(typesArray);
+        JSONObject typeObject = typesArray.getJSONObject(0).getJSONObject("type");
+        System.out.println(typeObject);
+        return typeObject.getString("name");
+
+    }
+
+    public static void jsonEscribirTodo(Pelea p) throws IOException, MqttException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
-        File file = new File("pokemon.json");
-        mapper.writeValue(file, p);
+        String jsonString = mapper.writeValueAsString(p);
+
+        String broker = "tcp://localhost:1883";
+        String clientId = "JavaSample";
+        MqttClient sampleClient = new MqttClient(broker, clientId);
+        sampleClient.connect();
+        MqttMessage message = new MqttMessage(jsonString.getBytes());
+        message.setQos(2); sampleClient.publish("pokemon/pelea", message);
+        sampleClient.disconnect();
+
 
     }
 

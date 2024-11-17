@@ -1,6 +1,7 @@
 package org.example;
 
 
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import utils.ManejadorArchivos;
@@ -30,14 +31,12 @@ public class Main {
             Pelea pelea = new Pelea();
 
 
-            int numeroPokedex1 = random.nextInt(1025);
-            int numeroPokedex2 = random.nextInt(1025);
+            int numeroPokedex1 = random.nextInt(750);
+            int numeroPokedex2 = random.nextInt(750);
 
 
             JSONObject jsonPoke1 = api.conseguirPokemon(numeroPokedex1);
             JSONObject jsonPoke2 = api.conseguirPokemon(numeroPokedex2);
-
-
 
 
             String nombrePoke1 = ManejadorArchivos.jsonCrearPokemon(jsonPoke1);
@@ -84,11 +83,21 @@ public class Main {
             }
 
             System.out.println("Hasta aca está bien");
-
+            System.out.println(nombrePoke1);
             String imagenPokemon1 = ManejadorArchivos.jsonImagen1(jsonPoke1);
+            System.out.println(imagenPokemon1);
+            System.out.println(nombrePoke2);
             String imagenPokemon2 = ManejadorArchivos.jsonImagen2(jsonPoke2);
+            System.out.println(imagenPokemon2);
             List<Integer> estadisticas1 = ManejadorArchivos.jsonEstadisticas(jsonPoke1);
-            List<Integer> estadisticas2 = ManejadorArchivos.jsonEstadisticas(jsonPoke1);
+            System.out.println(estadisticas1);
+            System.out.println("Voy a obtener la estadistica");
+            String s = ManejadorArchivos.obtenerTipo1(jsonPoke1);
+            System.out.println("El tipo del pokemon 1 es: " + s);
+            List<Integer> estadisticas2 = ManejadorArchivos.jsonEstadisticas(jsonPoke2);
+            String s2 = ManejadorArchivos.obtenerTipo2(jsonPoke2);
+            System.out.println(s2);
+            System.out.println(estadisticas2);
 
             /**
             System.out.println("El pokemon 1 es: " + nombrePoke1);
@@ -100,27 +109,27 @@ public class Main {
             System.out.println(estadisticas1);
             System.out.println(estadisticas2);
             */
-            System.out.println("Se ingresa nombre 1");
+            System.out.println(nombrePoke1);
             pelea.anadirNombre1(nombrePoke1);
-            System.out.println("Se ingresa nombre 2");
+            System.out.println(nombrePoke2);
             pelea.anadirNombre2(nombrePoke2);
-            System.out.println("Se ingresa imagen 1");
+            System.out.println(imagenPokemon1);
             pelea.anadirImagen1(imagenPokemon1);
-            System.out.println("Se ingresa imagen 2");
+            System.out.println(imagenPokemon2);
             pelea.anadirImagen2(imagenPokemon2);
-            System.out.println("Se ingresa estadisticas 1");
-            pelea.anadirEstadisticas1(estadisticas1);
-            System.out.println("Se ingresa estadisticas 2");
-            pelea.anadirEstadisticas2(estadisticas2);
-            System.out.println("Se ingresa movimientos 1");
+            System.out.println(estadisticas1);
+            pelea.anadirEstadisticas1(estadisticas1,s);
+            System.out.println(estadisticas2);
+            pelea.anadirEstadisticas2(estadisticas2,s2);
+            System.out.println(cadenasMovimientosPokemon1);
             pelea.anadirMovimientos1(cadenasMovimientosPokemon1);
-            System.out.println("Se ingresa movimientos 2");
+            System.out.println(cadenasMovimientosPokemon2);
             pelea.anadirMovimientos2(cadenasMovimientosPokemon2);
             System.out.println(pelea);
 
             try {
                 ManejadorArchivos.jsonEscribirTodo(pelea);
-            } catch (IOException e) {
+            } catch (IOException | MqttException e) {
                 throw new RuntimeException(e);
             }
 
@@ -129,7 +138,7 @@ public class Main {
 
 
         };
-        executorService.scheduleAtFixedRate(generarAleatorio, 0, 10, TimeUnit.MINUTES);
+        executorService.scheduleAtFixedRate(generarAleatorio, 0, 10, TimeUnit.SECONDS);
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("Deteniendo el servicio de ejecuciones programadas.");

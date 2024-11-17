@@ -7,14 +7,16 @@ public class Estadisticas {
     int specialAttack;
     int specialDefense;
     int speed;
+    String tipo;
 
-    public Estadisticas(int hp, int attack, int defense, int specialAttack, int specialDefense, int speed){
+    public Estadisticas(int hp, int attack, int defense, int specialAttack, int specialDefense, int speed, String tipo){
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
         this.specialAttack = specialAttack;
         this.specialDefense = specialDefense;
         this.speed = speed;
+        this.tipo = tipo;
     }
 
     public Estadisticas() {
@@ -69,6 +71,14 @@ public class Estadisticas {
         this.speed = speed;
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     @Override
     public String toString() {
         return "Estadisticas{" +
@@ -78,6 +88,7 @@ public class Estadisticas {
                 ", specialAttack=" + specialAttack +
                 ", specialDefense=" + specialDefense +
                 ", speed=" + speed +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 }
