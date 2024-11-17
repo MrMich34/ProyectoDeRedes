@@ -25,8 +25,8 @@ public class Pokemon {
 
     }
 
-    public void anadirEstadisticas(int hp, int attack, int defense, int specialAttack, int specialDefense, int speed){
-        Estadisticas e = new Estadisticas(hp,attack,defense,specialAttack,specialDefense,speed);
+    public void anadirEstadisticas(int hp, int attack, int defense, int specialAttack, int specialDefense, int speed, String tipo){
+        Estadisticas e = new Estadisticas(hp,attack,defense,specialAttack,specialDefense,speed, tipo);
         setEstadisticas(e);
     }
 

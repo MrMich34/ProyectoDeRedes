@@ -32,12 +32,12 @@ public class Pelea {
         pokemon2.setImagen(imagen);
     }
 
-    public void anadirEstadisticas1(List<Integer> list){
-        pokemon1.anadirEstadisticas(list.get(0), list.get(1),list.get(2),list.get(3),list.get(4),list.get(5));
+    public void anadirEstadisticas1(List<Integer> list, String s){
+        pokemon1.anadirEstadisticas(list.get(0), list.get(1),list.get(2),list.get(3),list.get(4),list.get(5),s);
     }
 
-    public void anadirEstadisticas2(List<Integer> list){
-        pokemon2.anadirEstadisticas(list.get(0), list.get(1),list.get(2),list.get(3),list.get(4),list.get(5));
+    public void anadirEstadisticas2(List<Integer> list, String s){
+        pokemon2.anadirEstadisticas(list.get(0), list.get(1),list.get(2),list.get(3),list.get(4),list.get(5),s);
     }
 
     public void anadirMovimientos1(List<List<String>> lm){
